@@ -1,5 +1,5 @@
 # RukChessWeb
-Web interface for use with the [RukChess](https://github.com/Ilya-Ruk/RukChess) engine or other engines with support UCI protocol.
+Web interface for usage with the [RukChess](https://github.com/Ilya-Ruk/RukChess) or other engines with support UCI protocol.
 
 # Add engine
 1. Copy the executable file with the engine to the "engines" folder. If necessary, also copy the file with the neural network and/or the opening book.
