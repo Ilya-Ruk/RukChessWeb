@@ -13,6 +13,7 @@ var $flip = $('#flip')
 var $undo = $('#undo')
 var $analyze = $('#analyze')
 
+var $engine = $('#engine')
 var $depth = $('#depth')
 var $moveTime = $('#moveTime')
 
@@ -57,9 +58,10 @@ function computerMove (analyze = false) {
   $info.html('the computer thinks ...')
 
   $.ajax({
-    url: 'ruk_chess.php',
+    url: 'chess.php',
     cache: false,
     data: {
+	  engine: $engine.val(),
       fen: game.fen(),
 	  depth: $depth.val(),
       movetime: $moveTime.val()

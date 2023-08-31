@@ -1,24 +1,13 @@
 <?php
 
-//$chess_engine = 'RukChess 3.0 SEF';
-//$chess_engine = 'RukChess 3.0 Toga';
-//$chess_engine = 'RukChess 3.0 NNUE';
-$chess_engine = 'RukChess 3.0 NNUE2';
+require 'config.php';
 
-//$chess_engine = 'demolito_pext';
-//$chess_engine = 'Hakkapeliitta 3.0 x64';
-//$chess_engine = 'xiphos-0.6-w64-bmi2';
-
-$chess_engine_folder = __DIR__ . '\engines';
-$chess_engine_file = $chess_engine_folder . '\\' . $chess_engine . '.exe';
-
-$fen_default = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'; // startpos
-$depth_default = 0; // None
-$move_time_default = 3000; // 3 sec.
-
+$engine = $_GET['engine'] ?? $engine_default;
 $fen = $_GET['fen'] ?? $fen_default;
-$depth = (int)$_GET['depth'] ?? $depth_default;
-$move_time = (int)$_GET['movetime'] ?? $move_time_default;
+$depth = (int)($_GET['depth'] ?? $depth_default);
+$move_time = (int)($_GET['movetime'] ?? $move_time_default);
+
+$engine_file = $engine_folder . DIRECTORY_SEPARATOR . $engine . $engine_extension;
 
 $descriptorspec = [
 	0 => ['pipe', 'r'],
@@ -29,7 +18,7 @@ $other_options = [
 	'bypass_shell' => true,
 ];
 
-$process = @proc_open($chess_engine_file, $descriptorspec, $pipes, $chess_engine_folder, null, $other_options);
+$process = @proc_open($engine_file, $descriptorspec, $pipes, $engine_folder, null, $other_options);
 
 if ($process === false) {
 	header($_SERVER['SERVER_PROTOCOL'].' 500 Internal Server Error');
@@ -50,7 +39,6 @@ while (true) {
 }
 
 fwrite($pipes[0], 'ucinewgame' . PHP_EOL);
-
 fwrite($pipes[0], 'isready' . PHP_EOL);
 
 while (true) {
@@ -62,7 +50,6 @@ while (true) {
 }
 
 fwrite($pipes[0], 'position fen ' . $fen . PHP_EOL);
-
 fwrite($pipes[0], 'go depth ' . $depth . ' movetime ' . $move_time . PHP_EOL);
 
 while (true) {

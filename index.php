@@ -1,3 +1,11 @@
+<?php
+
+require 'config.php';
+require 'engine_list.php';
+
+$engine_list = engine_list($engine_folder, $engine_extension);
+
+?>
 <!doctype html>
 <html>
 	<head>
@@ -5,13 +13,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>RukChess 3.0</title>
+		<title>RukChessWeb</title>
 
 		<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
 	</head>
 
 	<body>
-		<h1 style="margin: 10px 0">RukChess 3.0</h1>
+		<h1 style="margin: 10px 0">RukChessWeb</h1>
 
 		<div style="margin: 10px 0">
 			<label>Play:</label>
@@ -28,6 +36,14 @@
 		</div>
 
 		<div style="margin: 10px 0">
+			<label>Engine:</label>
+
+			<select id="engine">
+				<?php foreach ($engine_list as $engine_name): ?>
+					<option value="<?= $engine_name ?>"<?= ($engine_name == $engine_default) ? ' selected' : '' ?>><?= $engine_name ?></option>
+				<?php endforeach; ?>
+			</select>
+
 			<label>Depth limit:</label>
 
 			<select id="depth">
@@ -92,5 +108,5 @@
 	<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js" integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz" crossorigin="anonymous"></script>
 
-	<script src="js/ruk_chess.js"></script>
+	<script src="js/chess.js"></script>
 </html>
