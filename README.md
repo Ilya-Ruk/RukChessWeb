@@ -19,7 +19,6 @@ Copy the executable file with the engine to the "engines" folder. If necessary, 
 See [config.php](config.php)
 
 # Print screen
-
 ![Print screen](resources/print_screen.jpg)
 
 # Resources
