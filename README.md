@@ -4,7 +4,11 @@ Web interface for usage with the [RukChess](https://github.com/Ilya-Ruk/RukChess
 # Install
 ```
 git clone https://github.com/Ilya-Ruk/RukChessWeb.git
+```
+```
 cd RukChessWeb
+```
+```
 npm install
 ```
 
