@@ -1,0 +1,29 @@
+{
+  "name": "rukchessweb",
+  "version": "1.0.0",
+  "description": "Web interface for usage with the RukChess or other engines with support UCI protocol",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ilya-Ruk/RukChessWeb.git"
+  },
+  "keywords": [
+    "chess",
+    "uci",
+    "web",
+    "interface"
+  ],
+  "author": "Ilya Rukavishnikov",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Ilya-Ruk/RukChessWeb/issues"
+  },
+  "homepage": "https://github.com/Ilya-Ruk/RukChessWeb#readme",
+  "dependencies": {
+    "@chrisoakman/chessboardjs": "^1.0.0",
+    "chess.js": "^0.13.4"
+  }
+}

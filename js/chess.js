@@ -3,6 +3,8 @@
 // NOTE: this example uses the chess.js library:
 // https://github.com/jhlywa/chess.js
 
+import { Chess } from "../node_modules/chess.js/chess.js"
+
 var board = null
 var game = new Chess()
 

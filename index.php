@@ -15,7 +15,7 @@ $engine_list = engine_list($engine_folder, $engine_extension);
 
 		<title>RukChessWeb</title>
 
-		<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+		<link rel="stylesheet" href="./node_modules/@chrisoakman/chessboardjs/dist/chessboard-1.0.0.min.css">
 	</head>
 
 	<body>
@@ -104,9 +104,7 @@ $engine_list = engine_list($engine_folder, $engine_extension);
 		<div id="info" style="margin-top: 10px"></div>
 	</body>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js" integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz" crossorigin="anonymous"></script>
-
-	<script src="js/chess.js"></script>
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="./node_modules/@chrisoakman/chessboardjs/dist/chessboard-1.0.0.min.js"></script>
+	<script type="module" src="./js/chess.js"></script>
 </html>
