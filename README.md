@@ -6,7 +6,7 @@ Copy the executable file with the engine to the "engines" folder. If necessary, 
 
 # Print screen
 
-![Print screen](resources/print_screen.pgn)
+![Print screen](resources/print_screen.jpg)
 
 # Resources
 1. https://chessboardjs.com/
