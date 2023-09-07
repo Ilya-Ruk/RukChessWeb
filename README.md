@@ -16,7 +16,7 @@ npm install
 Copy the executable file with the engine to the "engines" folder. If necessary, also copy the file with the neural network and/or the opening book.
 
 # Config
-See [config.php](https://github.com/Ilya-Ruk/RukChessWeb/config.php)
+See [config.php](config.php)
 
 # Print screen
 
